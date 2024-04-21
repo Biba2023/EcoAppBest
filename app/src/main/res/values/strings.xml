@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">EcoApp</string>
+    <string name="title_home">Дом</string>
+    <string name="title_events">Задания</string>
+    <string name="title_map">Карта</string>
+    <string name="title_food">Еда</string>
+    <string name="title_profile">Профиль</string>
+</resources>
