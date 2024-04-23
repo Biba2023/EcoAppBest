@@ -8,6 +8,7 @@
 
     <color name="Status">#3A953E</color>
     <color name="black">#FF000000</color>
+    <color name="red">#AE0000</color>
     <color name="background">#FFFFFFFF</color>
     <color name="PrimaryColorGreen">#8ADF6A</color>
     <color name="SecondaryColorLight">#F2F5DE</color>

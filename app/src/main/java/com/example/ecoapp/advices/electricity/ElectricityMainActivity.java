@@ -29,7 +29,7 @@ public class ElectricityMainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        }
+    }
 
     public void goBack(View v) {
         Intent intent = new Intent(this, MainActivity.class);
