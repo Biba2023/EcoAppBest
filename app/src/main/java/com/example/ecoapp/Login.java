@@ -18,14 +18,14 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        final EditText editTextEmail = findViewById(R.id.editTextEmail);
+        final EditText editTextLogin = findViewById(R.id.editTextLogin);
         final EditText editTextPassword = findViewById(R.id.editTextPassword);
         Button buttonLogin = findViewById(R.id.buttonLogin);
 
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String login = editTextEmail.getText().toString();
+                String login = editTextLogin.getText().toString();
                 String password = editTextPassword.getText().toString();
 
                 if (!login.isEmpty() && !password.isEmpty()) {
