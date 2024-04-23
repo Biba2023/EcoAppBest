@@ -18,11 +18,6 @@
         tools:layout="@layout/fragment_dashboard" />
 
     <fragment
-        android:id="@+id/navigation_map"
-        android:name="com.example.ecoapp.ui.food.NotificationsFragment"
-        android:label="@string/title_food"
-        tools:layout="@layout/fragment_notifications" />
-    <fragment
         android:id="@+id/navigation_food"
         android:name="com.example.ecoapp.ui.food.NotificationsFragment"
         android:label="@string/title_food"

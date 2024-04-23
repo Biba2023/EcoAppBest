@@ -11,10 +11,7 @@
         android:icon="@drawable/icon_events"
         android:title="@string/title_events" />
 
-    <item
-        android:id="@+id/navigation_food"
-        android:icon="@drawable/icon_food"
-        android:title="@string/title_food" />
+
     <item
         android:id="@+id/navigation_map"
         android:icon="@drawable/icon_map"
