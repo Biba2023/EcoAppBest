@@ -25,14 +25,23 @@ public class Login extends AppCompatActivity {
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = editTextEmail.getText().toString();
+                String login = editTextEmail.getText().toString();
                 String password = editTextPassword.getText().toString();
 
-                if (!email.isEmpty() && !password.isEmpty()) {
-                    Intent intent = new Intent(Login.this, MainActivity.class);
-                    startActivity(intent);
+                if (!login.isEmpty() && !password.isEmpty()) {
+                    if (login.length() >= 2) {
+                        if (password.length() >= 8) {
+                            Intent intent = new Intent(Login.this, MainActivity.class);
+                            startActivity(intent);
+                            showToast("Успешная авторизация");
+                        } else {
+                            showToast("Пароль должен содержать не менее 8 символов");
+                        }
+                    } else {
+                        showToast("Имя должно содержать не менее 2 букв");
+                    }
                 } else {
-                    showToast("Please enter email and password");
+                    showToast("Заполните все поля");
                 }
             }
         });

@@ -29,7 +29,6 @@ public class ElectricityMainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-        @SuppressLint({"WrongViewCast", "MissingInflatedId", "LocalSuppress"}) Button button_back = findViewById(R.id.button_back);
 
         }
 
