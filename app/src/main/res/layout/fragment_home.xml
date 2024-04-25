@@ -64,11 +64,28 @@
 
                 </LinearLayout>
 
-                <TextView
+                <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-medium"
-                    android:text="Вы заработали 100 эко-баллов" />
+                    android:layout_gravity="center_vertical"
+
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_coins" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-black"
+                        android:width="@dimen/activity_horizontal_margin"
+                        android:textSize="20sp"
+                        android:textColor="@color/green"
+                        android:text="0" />
+
+                </LinearLayout>
             </LinearLayout>
 
             <ImageView
@@ -150,7 +167,7 @@
 
                 <ImageView
                     android:layout_width="163dp"
-                    android:layout_height="73dp"
+                    android:layout_height="75dp"
                     android:src="@drawable/lamp_icon" />
 
                 <TextView
