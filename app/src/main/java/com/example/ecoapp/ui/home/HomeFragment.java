@@ -6,14 +6,16 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.ecoapp.Login;
-import com.example.ecoapp.MainActivity;
-import com.example.ecoapp.advices.electricity.ElectricityMainActivity;
+import com.example.ecoapp.advices.ElectricityMainActivity;
+import com.example.ecoapp.advices.FoodMainActivity;
+import com.example.ecoapp.advices.RecyclingMainActivity;
+import com.example.ecoapp.advices.WaterMainActivity;
 import com.example.ecoapp.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
@@ -32,6 +34,30 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getActivity(), ElectricityMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.buttonWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), WaterMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.buttonFood.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), FoodMainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        binding.buttonRecycling.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), RecyclingMainActivity.class);
                 startActivity(intent);
             }
         });
