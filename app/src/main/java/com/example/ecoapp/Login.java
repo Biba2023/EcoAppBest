@@ -1,25 +1,18 @@
 package com.example.ecoapp;
 
+import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
-
-
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.ecoapp.databinding.ActivityMainBinding;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.android.material.textfield.TextInputLayout;
 
 
 public class Login extends AppCompatActivity {
 
+    private static final String PREF_NAME = "UserData";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +33,7 @@ public class Login extends AppCompatActivity {
             if (!login.isEmpty() && !password.isEmpty()) {
                 if (login.length() >= 2) {
                     if (password.length() >= 8) {
+                        saveUserData(login);
                         Intent intent = new Intent(Login.this, MainActivity.class);
                         startActivity(intent);
                         showToast("Успешная авторизация");
@@ -61,4 +55,10 @@ public class Login extends AppCompatActivity {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 
+    private void saveUserData(String login) {
+        SharedPreferences sharedPreferences = getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString("login", login);
+        editor.apply();
+    }
 }

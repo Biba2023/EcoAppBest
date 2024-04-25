@@ -1,7 +1,8 @@
 package com.example.ecoapp.ui.home;
 
-
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
-
 import com.example.ecoapp.advices.ElectricityMainActivity;
 import com.example.ecoapp.advices.FoodMainActivity;
 import com.example.ecoapp.advices.RecyclingMainActivity;
@@ -20,7 +20,11 @@ import com.example.ecoapp.databinding.FragmentHomeBinding;
 
 public class HomeFragment extends Fragment {
 
+
+    private static final String PREF_NAME = "UserData";
     private FragmentHomeBinding binding;
+
+    private TextView Login;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -29,6 +33,14 @@ public class HomeFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        Login = binding.helloText;
+
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
+        String login = sharedPreferences.getString("login", "");
+
+        Login.setText(login);
 
         binding.buttonElectricity.setOnClickListener(new View.OnClickListener() {
             @Override
