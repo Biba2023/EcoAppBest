@@ -22,7 +22,12 @@ public class HomeFragment extends Fragment {
 
 
     private static final String PREF_NAME = "UserData";
+
+    private static final String COINS = "Coins";
     private FragmentHomeBinding binding;
+
+    private TextView Coins;
+    private int coinsCount;
 
     private TextView Login;
 
@@ -42,9 +47,22 @@ public class HomeFragment extends Fragment {
 
         Login.setText(login);
 
+        Coins = binding.coins;
+
+        SharedPreferences sharedPreferences2 = requireActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
+        coinsCount = sharedPreferences2.getInt(COINS, 0);
+
+        update();
+
+
         binding.buttonElectricity.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                coinsCount += 100;
+                update();
+                saveCoins();
+
                 Intent intent = new Intent(getActivity(), ElectricityMainActivity.class);
                 startActivity(intent);
             }
@@ -53,6 +71,10 @@ public class HomeFragment extends Fragment {
         binding.buttonWater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                coinsCount += 100;
+                update();
+                saveCoins();
+
                 Intent intent = new Intent(getActivity(), WaterMainActivity.class);
                 startActivity(intent);
             }
@@ -61,6 +83,10 @@ public class HomeFragment extends Fragment {
         binding.buttonFood.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                coinsCount += 100;
+                update();
+                saveCoins();
+
                 Intent intent = new Intent(getActivity(), FoodMainActivity.class);
                 startActivity(intent);
             }
@@ -69,11 +95,26 @@ public class HomeFragment extends Fragment {
         binding.buttonRecycling.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                coinsCount += 100;
+                update();
+                saveCoins();
+
                 Intent intent = new Intent(getActivity(), RecyclingMainActivity.class);
                 startActivity(intent);
             }
         });
         return root;
+    }
+
+    private void update() {
+        Coins.setText(String.valueOf(coinsCount));
+    }
+
+    private void saveCoins() {
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt(COINS, coinsCount);
+        editor.apply();
     }
 
     @Override

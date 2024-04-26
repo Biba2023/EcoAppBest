@@ -72,11 +72,10 @@
                         android:src="@drawable/ic_coin" />
 
                     <TextView
-                        android:layout_width="wrap_content"
+                        android:id="@+id/coins"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-black"
-                        android:width="@dimen/activity_horizontal_margin"
-                        android:layout_gravity="center"
                         android:layout_marginStart="5dp"
                         android:textSize="25sp"
                         android:textColor="@color/green"

@@ -5,90 +5,124 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.profile.NotificationsFragment">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_marginStart="25dp"
-    android:layout_marginEnd="25dp"
-    android:weightSum="180">
+
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_weight="1"
-        android:background="@drawable/background_advice"
-        android:weightSum="5">
-        <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/planet_img"
-            android:layout_weight="1"/>
+        android:orientation="vertical"
+        android:weightSum="180"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        tools:layout_editor_absoluteX="25dp"
+        tools:ignore="MissingConstraints">
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="4">
-        <TextView
-            android:id="@+id/name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/PrimaryColorGreen"
-            android:textSize="15sp"
-            android:layout_gravity="center"
-            android:text="Name"
-            android:fontFamily="sans-serif-black"/>
+            android:layout_weight="1"
+            android:background="@drawable/background_advice"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/planet_img" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:src="@drawable/ic_coin"
-                    android:layout_gravity="center"/>
+                android:layout_gravity="center_vertical"
+                android:layout_weight="4"
+                android:orientation="vertical">
 
                 <TextView
+                    android:id="@+id/name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:layout_marginStart="10dp"
                     android:layout_gravity="center"
-                    android:width="@dimen/activity_horizontal_margin"
-                    android:textSize="20sp"
-                    android:textColor="@color/green"
-                    android:text="0" />
+                    android:fontFamily="sans-serif-black"
+                    android:text="Name"
+                    android:textColor="@color/PrimaryColorGreen"
+                    android:textSize="25sp" />
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_coin" />
+
+                    <TextView
+                        android:id="@+id/coins_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="10dp"
+
+                        android:fontFamily="sans-serif-black"
+                        android:text="0"
+                        android:textColor="@color/green"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
             </LinearLayout>
+
         </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="sans-serif-black"
+            android:text="На что тратить баллы?"
+            android:textColor="@color/PrimaryColorGreen"
+            android:textSize="25sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="5dp"
+            android:text="Баллы можно потратить на покупки в магазинах партнерах"
+            android:textSize="15sp" />
+
     </LinearLayout>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="На что тратить баллы?"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/PrimaryColorGreen"
-        android:textSize="25sp"
-        android:layout_marginTop="40dp"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
-        android:textSize="15sp"
-        android:text="Баллы можно потратить на покупки в магазинах партнерах"/>
+
     <ImageView
         android:layout_width="wrap_content"
-        android:layout_height="200dp"
-        android:src="@drawable/shopping"/>
-</LinearLayout>
+        android:layout_height="0dp"
+        android:src="@drawable/shopping"
+        app:layout_constraintBottom_toTopOf="@+id/guideline4"
+        app:layout_constraintTop_toTopOf="@+id/guideline5"
+        tools:ignore="MissingConstraints" />
+
     <androidx.constraintlayout.widget.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintGuide_percent="1.85"/>
+        app:layout_constraintGuide_percent="1.85" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

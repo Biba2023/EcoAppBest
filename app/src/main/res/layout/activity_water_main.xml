@@ -36,7 +36,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="80dp"
+                    android:layout_marginStart="90dp"
                     android:fontFamily="sans-serif-black"
                     android:text="Вода"
                     android:layout_gravity="center"
@@ -78,7 +78,7 @@
                         android:layout_weight="29"
                         android:layout_marginStart="5dp"
                         android:layout_marginEnd="5dp"
-                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:fontFamily="sans-serif-medium"
                         android:text="15 литров воды можно сэкономить за сутки, если вы выключаете кран, когда чистите зубы или бреетесь. Для сравнения, на душ уходит намного меньше воды."
                         android:textColor="@color/Status"
@@ -116,7 +116,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="Включайте стиральную машину только при полной загрузке."
                         android:textColor="@color/Status"
-                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -150,7 +150,7 @@
                     android:fontFamily="sans-serif-medium"
                     android:text="Используйте воду, которая осталась от мытья овощей и фруктов, для полива растений."
                     android:textColor="@color/Status"
-                    android:gravity="center"
+                       android:orientation="horizontal"
                     android:textSize="15sp" />
                 </LinearLayout>
                 <LinearLayout
@@ -185,7 +185,7 @@
                         android:fontFamily="sans-serif-medium"
                         android:text="Попробуйте мыть посуду в раковине с набранной водой. Это огромная экономия воды!"
                         android:textColor="@color/Status"
-                        android:gravity="center"
+                        android:orientation="horizontal"
                         android:textSize="15sp" />
                 </LinearLayout>
             </LinearLayout>

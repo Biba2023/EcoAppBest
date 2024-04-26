@@ -27,7 +27,6 @@ public class RecyclingMainActivity extends AppCompatActivity {
         });
     }
     public void goBack(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        getOnBackPressedDispatcher().onBackPressed();
     }
 }

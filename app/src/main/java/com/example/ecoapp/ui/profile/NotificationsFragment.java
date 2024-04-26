@@ -19,7 +19,10 @@ import com.example.ecoapp.databinding.FragmentNotificationsBinding;
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
+    private static final String COINS = "Coins";
+    private TextView Coins;
     private static final String PREF_NAME = "UserData";
+    private int coinsCount;
     private TextView Name;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -35,6 +38,12 @@ public class NotificationsFragment extends Fragment {
 
         Name.setText(login);
 
+        Coins = binding.coinsProfile;
+
+        SharedPreferences sharedPreferences2 = requireActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+
+        coinsCount = sharedPreferences2.getInt(COINS, 0);
+        Coins.setText(String.valueOf(coinsCount));
         return root;
     }
 
