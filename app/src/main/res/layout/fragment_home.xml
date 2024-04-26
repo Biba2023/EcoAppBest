@@ -5,12 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.home.HomeFragment">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    tools:ignore="MissingConstraints"
-    android:layout_marginBottom="20dp"
-    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -68,20 +62,23 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-
+                    android:layout_marginTop="5dp"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_coins" />
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_coin" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-black"
                         android:width="@dimen/activity_horizontal_margin"
-                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="5dp"
+                        android:textSize="25sp"
                         android:textColor="@color/green"
                         android:text="0" />
 
@@ -146,7 +143,13 @@
             android:text="Эко-советы"
             android:textColor="@color/PrimaryColorGreen"
             android:textSize="20sp" />
-
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -226,6 +229,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginBottom="100dp"
             android:orientation="horizontal"
             android:weightSum="2">
 
@@ -296,6 +300,11 @@
                     android:textSize="10sp" />
             </FrameLayout>
         </LinearLayout>
+        </LinearLayout>
+        </ScrollView>
     </LinearLayout>
-</ScrollView>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

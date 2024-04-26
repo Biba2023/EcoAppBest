@@ -3,13 +3,22 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@drawable/background_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Login">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toTopOf="@+id/guideline"
+    android:background="@drawable/background_advice"
+    android:orientation="vertical"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp">
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:id="@+id/editLogin"
+        android:layout_marginTop="25dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -18,16 +27,16 @@
         app:helperText="*Обязательно"
         app:helperTextTextColor="@color/red"
         app:counterEnabled="true"
-        app:counterMaxLength="16"
+        app:counterMaxLength="10"
         app:endIconMode="clear_text"
         app:startIconDrawable="@drawable/ic_circle_account"
 
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideline">
+        app:layout_constraintStart_toStartOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:maxLength="16"
+            android:maxLength="10"
+
             android:id="@+id/loginEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
@@ -69,16 +78,26 @@
         android:layout_height="wrap_content"
         android:onClick="startNewActivity"
         android:text="Вход"
+        android:layout_marginBottom="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:textColor="@color/background"
         app:layout_constraintEnd_toEndOf="@+id/editPassword"
         app:layout_constraintStart_toStartOf="@+id/editPassword"
         app:layout_constraintTop_toBottomOf="@+id/editPassword" />
+</LinearLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.35" />
+        app:layout_constraintGuide_percent="0.3" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.25" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
